@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<title>Duck Hunt</title>
+	</head>
+	<body class="flex">
+		<div class="stage flex">
+			<img
+				id="background"
+				src="./img/backgrounds/stage_transparent.png"
+				alt=""
+			/>
+
+			<!-- Center Cards -->
+			<div id="center-container">
+				<div id="game-intro">
+					<img src="./img/ui/intro.png" alt="" />
+				</div>
+
+				<div id="result" class="flex">
+					PERFECT!!
+
+					<span>10000</span>
+				</div>
+
+				<div id="round-intro" class="flex">
+					ROUND
+					<span class="level">01</span>
+					<br />
+					Press any key to continue...
+				</div>
+			</div>
+
+			<!-- User Interface -->
+			<div class="ui flex">
+				<!-- Round Card -->
+				<div id="round-container">
+					<div id="round-text" class="flex">
+						ROUND:
+						<span class="level">01</span>
+					</div>
+				</div>
+
+				<!-- Bullets Card -->
+				<div id="bullets-container" class="flex">
+					<div id="ammo" class="flex">
+						<div class="bullet-1">
+							<img src="./img/ui/bullet.png" alt="" />
+						</div>
+						<div class="bullet-2">
+							<img src="./img/ui/bullet.png" alt="" />
+						</div>
+						<div class="bullet-3">
+							<img src="./img/ui/bullet.png" alt="" />
+						</div>
+					</div>
+					<div id="bullets-text">SHOT</div>
+				</div>
+
+				<!-- Hits Card -->
+				<div id="hits-container" class="grid">
+					<div id="hits-text" class="flex">HIT</div>
+					<div id="duck-hit-0"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-1"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-2"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-3"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-4"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-5"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-6"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-7"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-8"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-9"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-10"><img src="./img/ui/miss.png" /></div>
+					<div id="duck-hit-11"><img src="./img/ui/miss.png" /></div>
+					<div id="speed"><span>|||||||||||||||||||||||||</span></div>
+				</div>
+
+				<!-- Score Card -->
+				<div id="score-container" class="flex">
+					<div id="count">000000</div>
+					<div id="score-text">SCORE</div>
+				</div>
+			</div>
+			<div id="duck-1" class="duck no-disp"><div id="duck-1-img"></div>
+			</div>
+			<div id="duck-2" class="duck no-disp"><div id="duck-2-img"></div>
+			</div>
+			<div id="duck-3" class="duck no-disp"><div id="duck-3-img"></div>
+			</div>
+
+			<div id="dog"></div>
+		</div>
+		<script src="js/classes(2).js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

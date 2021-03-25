@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+/*!=====================================*/
+/*?  Base                               */
+/*!=====================================*/
+* {
+	font-family: 'Press Start 2P', sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+
+	/* border: 1px solid red; */
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+	/* display: flex;
+  justify-content: center; */
+	align-items: center;
+	background-color: #222;
+	line-height: 1.6;
+	height: 100%;
+	width: 100vw;
+	margin: auto auto;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*!=====================================*/
+/*?  Utilities                          */
+/*!=====================================*/
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100%;
+}
+
+.grid {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+
+	/* grid-template-columns: repeat(2, 1fr); */
+	/* gap: 20px; */
+	height: 100%;
+}
+
+.no-disp {
+	display: none;
+}
+
+/*!=====================================*/
+/*?  Colors                             */
+/*!=====================================*/
+:root {
+	--color_main_background: linear-gradient(#55c0f5, #007dbb);
+	--color_ui_background: #222;
+
+	--color_text_main: #eee;
+	--color_text_ui: #80d010;
+	--color_text_ui_secondary: #55c0f5;
+
+	--color_border_main: 3px solid #222;
+	--color_border_ui: 3px solid #80d010;
+
+	--color_border_center: 3px solid #eee;
+}
+
+/*!=====================================*/
+/*?  Stage                              */
+/*!=====================================*/
+.stage {
+	position: relative;
+	width: 1280px;
+	height: 769px;
+	max-height: 100vh;
+	border: var(--main_border);
+	border-radius: 15px;
+	background: var(--color_main_background);
+
+	cursor: url('../img/ui/crosshair2.cur'), default;
+	overflow: hidden;
+}
+.stage #background {
+	z-index: 8;
+	position: absolute;
+	bottom: 0;
+	pointer-events: none;
+}
+
+/*  Duck Container
+  ====================================*/
+
+.duck {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 68px;
+	width: 68px;
+
+	user-select: none;
+	z-index: 7;
+}
+#duck-1-img {
+	height: 68px;
+	width: 68px;
+	background: url('../img/duck/duck-1_1.png');
+}
+#duck-2-img {
+	height: 68px;
+	width: 68px;
+	background: url('../img/duck/duck-2_1.png');
+}
+#duck-3-img {
+	height: 68px;
+	width: 68px;
+	background: url('../img/duck/duck-3_1.png');
+}
+
+.duck-left {
+	transform: scaleX(-1);
+}
+
+/*!=====================================*/
+/*?  Center container                   */
+/*!=====================================*/
+.stage #center-container {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+#center-container > * {
+	position: absolute;
+	width: 400px;
+	height: 225px;
+	background-color: var(--color_ui_background);
+	color: var(--color_text_main);
+	text-align: center;
+	flex-direction: column;
+}
+
+#game-intro {
+	display: fixed; /*fixed*/
+	z-index: 13;
+}
+
+#result {
+	display: none; /*flex*/
+	border: var(--color_border_center);
+	border-radius: 10px;
+}
+
+#round-intro {
+	display: flex; /*flex*/
+	border: var(--color_border_center);
+	border-radius: 10px;
+	z-index: 11;
+	z-index: 12;
+}
+
+/*!=====================================*/
+/*?  User interface                     */
+/*!=====================================*/
+
+/*  Base
+  ====================================*/
+.ui {
+	width: 100%;
+	height: 150px;
+	align-self: flex-end;
+	z-index: 10;
+
+	justify-content: space-evenly;
+	pointer-events: none;
+	flex-wrap: wrap;
+}
+
+.ui > * {
+	height: 63px;
+	background-color: var(--color_ui_background);
+	border: var(--color_border_ui);
+	border-radius: 10px;
+	/* margin: 0 auto; */
+	max-width: 90vw;
+	user-select: none;
+}
+
+/*  Round Card
+  ====================================*/
+#round-container {
+	width: 10.6%;
+	min-width: 108px;
+	color: var(--color_text_ui);
+}
+#round-text {
+	flex-direction: column;
+}
+
+/*  Bullets Card
+  ====================================*/
+#bullets-container {
+	flex-direction: column;
+	width: 7%;
+	min-width: 72px;
+}
+
+#bullets-container #bullets-text {
+	text-align: center;
+	color: var(--color_text_ui_secondary);
+}
+
+/*  Hits Card
+  ====================================*/
+#hits-container {
+	grid-template-columns: 3fr repeat(12, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-gap: 0;
+	text-align: center;
+	width: 42.6%;
+	min-width: 380px;
+}
+#hits-container #hits-text {
+	height: 100%;
+
+	color: var(--color_text_ui);
+}
+
+#hits-container #speed {
+	grid-row: 2;
+	grid-column-start: 2;
+	grid-column-end: 12;
+	color: var(--color_text_ui_secondary);
+	letter-spacing: -7px;
+	text-align: left;
+}
+
+/*  Score Card
+  ====================================*/
+#score-container {
+	flex-direction: column;
+	width: 18%;
+	min-width: 114px;
+	color: var(--color_text_main);
+}
+
+@media screen and (max-width: 678px) {
+	.ui {
+		justify-content: start;
+	}
+	.ui > * {
+		margin: 5px;
+	}
+	#hits-container {
+		order: 4;
+	}
+	.stage #background {
+		transform: scale(2.4);
+		transform-origin: bottom left;
+		bottom: 0px;
+	}
+}
